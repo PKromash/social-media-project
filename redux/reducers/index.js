@@ -7,4 +7,4 @@ const reducers = combineReducers({
   users: users,
 });
 
-export {reducers};
+export default reducers;

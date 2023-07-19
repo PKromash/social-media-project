@@ -1,17 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-    serverComponentsExternalPackages: ["mongoose"],
-  },
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-  webpack(config) {
-    config.experiments = {
-      ...config.experiments,
-      topLevelAwait: true,
-    };
+  webpack(config, {isServer}) {
+    if (!isServer) {
+      // Exclude mongoose from the client-side bundle
+      config.externals.push("mongoose");
+    }
     return config;
   },
 };

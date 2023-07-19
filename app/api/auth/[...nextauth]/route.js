@@ -6,9 +6,8 @@ import User from "../../../../models/user";
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId:
-        "285153223021-598sdh1qv98q7hi1ko7knun8pekbkgfi.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   callbacks: {

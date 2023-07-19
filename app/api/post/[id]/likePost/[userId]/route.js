@@ -2,9 +2,9 @@ import connectToDB from "@/database";
 import Post from "@/models/post";
 
 export const PATCH = async (request, {params}) => {
+  const {id, userId} = params;
   try {
     await connectToDB();
-    const {id, userId} = params;
     const post = await Post.findById(id)
       .populate("creator")
       .populate({

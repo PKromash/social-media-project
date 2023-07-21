@@ -3,6 +3,7 @@ import User from "@/models/user";
 
 export const PATCH = async (req, {params}) => {
   const {userId, followId} = params;
+  console.log("follow route");
 
   try {
     await connectToDB();

@@ -84,6 +84,7 @@ export const deleteComment = (id, commentId) => async (dispatch) => {
 };
 
 export const likePost = (id, userId) => async (dispatch) => {
+  console.log("likePost action");
   try {
     const response = await fetch(`/api/post/${id}/likePost/${userId}`, {
       method: "PATCH",

@@ -2,6 +2,7 @@ import connectToDB from "@/database";
 import Post from "@/models/post";
 
 export const PATCH = async (request, {params}) => {
+  console.log("likePost route");
   const {id, userId} = params;
   try {
     await connectToDB();

@@ -83,11 +83,24 @@ export const deleteComment = (id, commentId) => async (dispatch) => {
   }
 };
 
+// export const likePost = (id, userId) => async (dispatch) => {
+//   try {
+//     const response = await fetch(`/api/post/${id}/likePost/${userId}`, {
+//       method: "PATCH",
+//       contentType: "application/json",
+//     });
+//     const data = await response.json();
+//     dispatch({type: "LIKE", payload: data});
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
 export const likePost = (id, userId) => async (dispatch) => {
   try {
     const response = await fetch(`/api/post/${id}/likePost/${userId}`, {
       method: "PATCH",
-      contentType: "application/json",
+      body: JSON.stringify({}),
     });
     const data = await response.json();
     dispatch({type: "LIKE", payload: data});

@@ -26,7 +26,6 @@ export const getUser = (user) => async (dispatch) => {
 };
 
 export const follow = (userId, followId) => async (dispatch) => {
-  console.log("follow action");
   try {
     await fetch(`/api/users/${userId}/${followId}`, {
       method: "PATCH",

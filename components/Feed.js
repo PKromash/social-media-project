@@ -43,7 +43,7 @@ const Feed = () => {
             .filter(
               (post) =>
                 post.creator._id === session?.user?.id ||
-                user.following.includes(post.creator._id)
+                user?.following.includes(post.creator._id)
             )
             .reverse()
             .map((post) => (

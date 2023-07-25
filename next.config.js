@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  productionBrowserSourceMaps: false,
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["mongoose"],
@@ -14,8 +15,6 @@ const nextConfig = {
     };
     return config;
   },
-  productionSourceMaps: false,
-  generateBuildFiles: false,
 };
 
 module.exports = nextConfig;

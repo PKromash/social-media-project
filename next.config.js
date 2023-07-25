@@ -14,6 +14,8 @@ const nextConfig = {
     };
     return config;
   },
+  productionSourceMaps: false,
+  generateBuildFiles: false,
 };
 
 module.exports = nextConfig;

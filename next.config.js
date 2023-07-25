@@ -1,19 +1,21 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   productionBrowserSourceMaps: false,
-  experimental: {
-    appDir: true,
-    serverComponentsExternalPackages: ["mongoose"],
-  },
+  generateBuildFiles: false,
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-  webpack(config) {
-    config.experiments = {
-      ...config.experiments,
-      topLevelAwait: true,
-    };
-    return config;
+  async headers() {
+    return [
+      {
+        source: "/(.*)", // Match all routes
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+        ],
+      },
+    ];
   },
 };
 

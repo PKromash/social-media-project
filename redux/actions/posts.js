@@ -104,7 +104,7 @@ export const likePost = (id, userId) => async (dispatch) => {
     console.log("Liking a post...");
     const response = await fetch(`/api/post/${id}/likePost/${userId}`, {
       method: "PATCH",
-      contentType: "application/json",
+      body: JSON.stringify({}), // Since the request doesn't have a request body, you can pass an empty object here.
     });
     const data = await response.json();
     console.log("Updated post after liking:", data);

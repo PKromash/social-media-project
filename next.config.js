@@ -1,6 +1,11 @@
 const nextConfig = {
   productionBrowserSourceMaps: false,
   generateBuildFiles: false,
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ["mongoose"],
+  },
+
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
